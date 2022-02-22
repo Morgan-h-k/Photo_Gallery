@@ -1,0 +1,165 @@
+/* --------------------------------------
+COLOR PALETTE WITH CSS VARIABLES
+----------------------------------------- */   
+
+/* Checking */
+
+:root {
+  --main-bg-color: rgb(255, 255, 255);
+  --main-fg-color: rgb(1, 35, 70);
+  --titles-color: rgb(226, 226, 226);
+  --bodytext-color: #444444;
+}
+
+body {
+   background-color: var(--main-bg-color);
+   color: var(--bodytext-color);
+   background-color: #292929;
+   font-family: 'Thasadith','Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+h1,h2,h3,h4,h5,h6 {
+   color: var( --titles-color);
+   font-family: 'Thasadith','Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1{
+  font-size: 4em;
+  text-align: center;
+}
+
+/* --------------------------------------
+RESPONSIVE IMAGES
+----------------------------------------- */  
+
+.home a{
+  width: 10rem;
+  height: 10rem;
+  display: block;
+  margin: 2rem auto; /* anchors are inline elements*/
+}
+
+img {
+  max-width: 100%;    /*on any device smaller than 576px, shrink all images to fit*/
+  height: auto;
+  margin-bottom: 2em;
+}
+
+figure {
+/*  border: 1px solid #444;  */
+margin: 1rem; /*margin of 16px on both sides = 32px */
+padding: 1rem; /*padding of 16px on both sides = 32px */
+/*box-sizing: border-box; */
+position: relative;
+width: 832px;
+margin: 0 auto;
+color: lightgrey;
+}
+
+
+.thumbs figcaption {
+width: 267px;
+margin: 0.75rem 0 0 0;
+position: absolute;
+text-align: center;
+font-size: 1.5em;
+bottom: 3.2rem;
+left: 1rem;
+padding: 1.1rem;
+background-color: #8f8f8f;
+color: white;
+filter: opacity(0%);
+}
+
+/*  Hover & Effects  */
+
+.thumbs img {
+  filter: opacity(0.5) saturate(40%);
+  transition: 0.7s;
+}
+
+.thumbs :hover img{
+  filter: opacity(1) saturate(100%);
+}
+.thumbs figcaption:hover{
+  filter: opacity(80%);
+  transition: 0.7s;
+}
+
+/* --------------------------------------
+ DEFAULT STYLES GO HERE
+----------------------------------------- */   
+
+
+
+
+/* --------------------------------------
+ MEDIA QUERIES FOR LARGER VIEWPORTS
+----------------------------------------- */   
+
+/* No media query for "extra small" since this is the default  
+ The following media query sizes are taken from Bootstrap 5
+ See: https://getbootstrap.com/docs/5.1/layout/breakpoints/
+ and: https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+*/
+
+@media only screen and (min-width: 336px) {  /* 304px figure + 2 x 16px margins */
+
+main.thumbs figure {
+  width: 304px;  /* 270px img + 2 x 16px padding + 2 x 1px borders = 304px */
+  margin: 1rem auto 2rem auto;  /* center figure tag + margin bottom */
+  }
+}
+
+
+@media only screen and (min-width: 576px) { 
+     
+}
+
+
+
+/* MEDIUM DEVICES (TABLETS, 768PX AND UP) */
+@media only screen and (min-width: 768px) {
+  
+}
+
+@media only screen and (min-width: 918px) {  /* 2 x 336 + 16px gap + 2 x 16px outer margins */
+main.thumbs {
+  display: grid;
+  padding: 0;
+  grid-template-columns: 304px 304px;  /* 608px */
+  grid-column-gap: 1rem; /* 608 + 16 = 624 */
+  /*  border: 1px solid red;   624px + 2 x 1 px = 626px */
+  width: 626px;
+  margin: 1rem auto; /* 626px + 2 x 16px = 658 + auto centering */
+  }
+}
+
+
+@media only screen and (min-width: 978px) {  /* 946px + 2 x 16px margin = 978 */
+  main.thumbs {
+    grid-template-columns: 304px 304px 304px;  /* 912px */
+    grid-column-gap: 1rem;  /* 912 + 2 x 16px = 944px  + 2 additional 1px borders = 946 */
+    width: 946px;
+  }
+}
+
+/* LAPTOPS AND DESKTOPS CAN BE REGULAR OR RETINA DISPLAY  */
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+}
+
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+
+}
